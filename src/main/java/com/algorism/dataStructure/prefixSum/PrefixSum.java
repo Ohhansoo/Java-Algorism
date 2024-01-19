@@ -1,2 +1,41 @@
-package com.algorism.dataStructure.prefixSum;public class PrefixSum {
+package com.algorism.dataStructure.prefixSum;
+
+import static com.algorism.dataStructure.prefixSum.FindPrefixSum.findPrefixSum01;
+import static com.algorism.dataStructure.prefixSum.FindPrefixSum.findPrefixSum02;
+
+/** 구간 합 : 합 배열을 이용하여 시간 복잡도를 더 줄이기 위해 사용하는 특수한 목적의 알고리즘
+ * */
+public class PrefixSum {
+
+    /**
+     * 합 배열 : 기존의 배열을 전처리한 배열
+     * 미리 합 배열을 구해놓음으로써, 시간 복잡도를 O(N) -> O(1)로 줄일 수 있다.
+     * [정의] : S[i] = A[0] + A[1] + A[2] + ... + A[i-1] + A[i]
+     * [합 배열 S를 만드는 공식] : S[i] = S[i-1] + A[i]
+     * [i에서 j까지의 구간합 공식] : S[j] - S[i-1]
+     * */
+
+    public static void main(String[] args){
+        //문제 1 : 구간 합 구하기
+        //입력 : 1번째 줄에 수의 개수 N(1 <= N <= 100,000), 합을 구해야 하는 횟수 M(1 <= M <= 100,000)
+        //      2번째 줄에 N개의 수가 주어진다.
+        //      각 수는 1,000보다 작거나 같은 자연수다. 3번째 줄부터는 M개의 줄에 합을 구해야 하는 구간 i와 j가 주어진다.
+        findPrefixSum01();
+
+        //문제 2 : 구간 합 구하기2
+        /************************************* 개 요 *************************************
+         * N * N개의 수가 N * N 크기의 표에 채워져 있다. 표 안의 수 중 (X1, Y1)에서 (X2, Y2)까지의 합을 구하려 한다. X는 행, Y는 열을 의미한다.
+         * 예를 들어 N = 4이고, 표가 다음과 같이 채워져 있을 때를 살펴보자.
+         * (2,2)에서 (3,4)까지의 합을 구하면 3+4+5+4+5+6 = 27이고, (4,4)에서 (4,4)까지의 합을 구하면 7이다. 표에 채워져 있는 수와 합을 구하는 연산이 주어졌을 때
+         * 이를 처리하는 프로그램을 작성하시오.
+         * */
+        //입력 : 1번째 줄에 표의 크기 N과 합을 구해야 하는 횟수 M이 주어진다(1 <= N <= 1024, 1 <= M <= 100,000)
+        //      2번째 줄부터 N개의 줄에는 표에 채워져 있는 수가 1행부터 차례대로 주어진다.
+        //      다음 M개의 줄에는 4개의 정수 X1, Y1, X2, Y2가 주어지며, (X1,Y1)에서 (X2,Y2)의 합을 구해 출력해야 한다.
+        //      표에 채워져 있는 수는 1,000보다 작거나 같은 자연수이다(X1 <= X2, Y1 <= Y2)
+        findPrefixSum02();
+    }
+
+
+
 }
