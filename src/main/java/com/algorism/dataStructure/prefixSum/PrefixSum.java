@@ -1,19 +1,17 @@
 package com.algorism.dataStructure.prefixSum;
 
-import static com.algorism.dataStructure.prefixSum.FindPrefixSum.findPrefixSum01;
-import static com.algorism.dataStructure.prefixSum.FindPrefixSum.findPrefixSum02;
+import static com.algorism.dataStructure.prefixSum.FindPrefixSum.*;
 
 /** 구간 합 : 합 배열을 이용하여 시간 복잡도를 더 줄이기 위해 사용하는 특수한 목적의 알고리즘
  * */
+/**
+ * 합 배열 : 기존의 배열을 전처리한 배열
+ * 미리 합 배열을 구해놓음으로써, 시간 복잡도를 O(N) -> O(1)로 줄일 수 있다.
+ * [정의] : S[i] = A[0] + A[1] + A[2] + ... + A[i-1] + A[i]
+ * [합 배열 S를 만드는 공식] : S[i] = S[i-1] + A[i]
+ * [i에서 j까지의 구간합 공식] : S[j] - S[i-1]
+ * */
 public class PrefixSum {
-
-    /**
-     * 합 배열 : 기존의 배열을 전처리한 배열
-     * 미리 합 배열을 구해놓음으로써, 시간 복잡도를 O(N) -> O(1)로 줄일 수 있다.
-     * [정의] : S[i] = A[0] + A[1] + A[2] + ... + A[i-1] + A[i]
-     * [합 배열 S를 만드는 공식] : S[i] = S[i-1] + A[i]
-     * [i에서 j까지의 구간합 공식] : S[j] - S[i-1]
-     * */
 
     public static void main(String[] args){
         //문제 1 : 구간 합 구하기
@@ -34,6 +32,14 @@ public class PrefixSum {
         //      다음 M개의 줄에는 4개의 정수 X1, Y1, X2, Y2가 주어지며, (X1,Y1)에서 (X2,Y2)의 합을 구해 출력해야 한다.
         //      표에 채워져 있는 수는 1,000보다 작거나 같은 자연수이다(X1 <= X2, Y1 <= Y2)
         findPrefixSum02();
+
+        //문제 3 : 나머지 합 구하기
+        /************************************* 개 요 *************************************
+         * N개의 수 A1, A2, ..., An이 주어졌을 때 연속된 부분의 합이 M으로 나누어떨어지는 구간의 개수를 구하는 프로그램 작성하시오
+         * 즉, A1 + A(i <= j)의 합이 M으로 나누어떨어지는 (i, j)쌍의 개수를 구하시오.
+         * */
+        //입력 : 1번째 줄에 연속된 부분의 합이 M으로 나누어떨어지는 구간의 개수를 출력한다.
+        findPrefixSum03();
     }
 
 
