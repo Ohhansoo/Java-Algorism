@@ -44,4 +44,11 @@ public class BubbleSort_MyAnswer {
         }
     }
 
+    //[Tip] N의 최대값이 500,000으로 일반적인 버블정렬로는 풀지 못한다.
+    //자바에서 기본적으로 제공하는 sort()는 시간복잡도가 O(nlon)으로 사용가능하다.
+    //데이터 정렬 전 index와 정렬 후 index를 비교해 왼쪽으로 가장 많이 이동한 값을 찾으면 해결 가능하다.
+    public void sortProgram01() throws IOException {
+
+    }
+
 }
