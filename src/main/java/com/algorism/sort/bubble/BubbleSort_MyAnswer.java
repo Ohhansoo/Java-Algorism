@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class BubbleSort_MyAnswer {
@@ -48,7 +49,35 @@ public class BubbleSort_MyAnswer {
     //자바에서 기본적으로 제공하는 sort()는 시간복잡도가 O(nlon)으로 사용가능하다.
     //데이터 정렬 전 index와 정렬 후 index를 비교해 왼쪽으로 가장 많이 이동한 값을 찾으면 해결 가능하다.
     public void sortProgram01() throws IOException {
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        mData[] A = new mData[N];
+        for (int i = 0; i < N; i++ ){
+            A[i] = new mData(Integer.parseInt(br.readLine()), i);
+        }
+        Arrays.sort(A);
+        int Max = 0;
+        for (int i = 0; i < N; i++){
+            if (Max < A[i].index - i) Max = A[i].index - 1;
+        }
+        System.out.println(Max + 1);
     }
 
+    class mData implements Comparable<mData>{
+        int value;
+        int index;
+        
+        public mData(int value, int index){
+            super();
+            this.value = value;
+            this.index = index;
+        }
+        
+        @Override
+        public int compareTo(mData o){
+            //value 기준 오름차순 정렬하기
+            return this.value - o.value;
+        }
+        
+    }
 }
