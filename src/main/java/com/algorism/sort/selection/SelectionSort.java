@@ -1,5 +1,7 @@
 package com.algorism.sort.selection;
 
+import com.algorism.sort.bubble.BubbleSort_MyAnswer;
+
 import java.io.IOException;
 
 /**
@@ -15,6 +17,19 @@ import java.io.IOException;
 public class SelectionSort {
 
     public static void main(String[] args) throws IOException {
+
+        SelectionSort_MyAnswer myAnswer = new SelectionSort_MyAnswer();
+
+        //문제 1(04-2-017) : 내림차순으로 자릿수 정렬하기
+        /************************************** 개 요 *************************************
+         * 배열을 정렬하는 것은 쉽다. 수가 주어지면 그 수의 각 자릿수를 내림차순으로 정렬하시오.
+         * */
+        //입력 : 1번째 줄에 정렬할 수 N이 주어진다. N은 1,000,000,000보다 작거나 같은 자연수다.
+        //출력 : 1번째 줄에 자릿수를 내림차순 정렬한 수를 출력한다.
+        //[예제 입력1] : 2143
+        //[예제 출력1] : 4321
+        System.out.println("문제 1(04-2-017) : 내림차순으로 자릿수 정렬하기");
+        myAnswer.sortDescending();
 
     }
 }
