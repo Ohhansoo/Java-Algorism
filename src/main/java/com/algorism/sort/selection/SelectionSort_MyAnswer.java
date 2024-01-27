@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class SelectionSort_MyAnswer {
 
-
     public void sortDescending_MyAnswer() throws IOException {
         Scanner sc = new Scanner(System.in);
         Long number = sc.nextLong();
