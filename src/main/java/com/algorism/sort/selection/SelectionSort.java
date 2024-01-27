@@ -30,6 +30,7 @@ public class SelectionSort {
         //[예제 출력1] : 4321
         System.out.println("문제 1(04-2-017) : 내림차순으로 자릿수 정렬하기");
         myAnswer.sortDescending();
+        //myAnswer.sortDescending_MyAnswer();
 
     }
 }
