@@ -22,7 +22,6 @@ import java.io.IOException;
  * 4.   분리 집합이 1개 이하가 될 때까지 과정 1~3을 반복한다.
  * */
 public class QuickSort {
-
     public static void main(String[] args) throws IOException {
 
         QuickSort_MyAnswer myAnswer = new QuickSort_MyAnswer();
@@ -38,7 +37,6 @@ public class QuickSort {
         //[예제 출력1] : 2
         System.out.println("뮨제 1(04-4-019) : K번째 수 구하기");
         myAnswer.findKthNumber();
-
     }
 
 }
