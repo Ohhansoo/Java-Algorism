@@ -42,7 +42,7 @@ public class BFS {
         //[예제 출력1] : 1 2 4 3
         //              1 2 3 4
         System.out.println("문제 1(05-2-026) : DFS와 BFS 프로그램");
-        myAnswer.DFSAndBFSProgram();
+        //myAnswer.DFSAndBFSProgram();
 
         //문제 2(05-2-027) : 미로 탐색하기
         /************************************** 개 요 *************************************
@@ -81,7 +81,7 @@ public class BFS {
         //              5 4 6 -1
         //[예제 출력1] : 11
         System.out.println("문제 3(05-2-028) : 트리의 지름 구하기");
-        myAnswer.findTreeDiameter();
+        //myAnswer.findTreeDiameter();
 
     }
 }

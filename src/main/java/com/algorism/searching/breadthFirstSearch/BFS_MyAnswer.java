@@ -33,22 +33,24 @@ public class BFS_MyAnswer {
      * */
     public void DFSAndBFSProgram() throws IOException {
         Scanner scan = new Scanner(System.in);
-        // 노드 개수
-        int N = scan.nextInt();
-        // 에지 개수
-        int M = scan.nextInt();
-        // 시작점
-        int Strat = scan.nextInt();
-        A = new ArrayList[N + 1];
+        int N = scan.nextInt();        // 노드 개수
+        int M = scan.nextInt();        // 에지 개수
+        int Strat = scan.nextInt();        // 시작점
+        A = new ArrayList[N + 1];          // 그래프 데이터 저장 인접 리스트
+
+        // A 인접 리스트의 각 ArrayList 초기화
         for (int i = 1; i <= N; i++) {
             A[i] = new ArrayList<Integer>();
         }
+
+        // A 인접 리스트에 그래프 데이터 저장
         for (int i = 0; i < M; i++) {
             int S = scan.nextInt();
             int E = scan.nextInt();
             A[S].add(E);
             A[E].add(S);
         }
+
         //번호가 작은 것을 먼저 방문하기 위해 정렬하기
         for (int i = 1; i <= N; i++) {
             Collections.sort(A[i]);
@@ -63,8 +65,11 @@ public class BFS_MyAnswer {
     }
 
     public static void DFS(int Node) {
+        // 현재 노드 출력
         System.out.println(Node + " ");
+        // 방문 기록
         visited[Node] = true;
+        // 재귀함수 형태로 방문하지 않는 노드로 DFS  실행
         for (int i : A[Node]) {
             if (!visited[i]) {
                 DFS(i);
@@ -72,13 +77,18 @@ public class BFS_MyAnswer {
         }
     }
     public static void BFS(int Node) {
+        // QUEUE 자료 구조에 시작 노드 삽입
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.add(Node);
+        // 현재 노드 방문 기록
         visited[Node] = true;
 
         while (!queue.isEmpty()) {
+            // QUEUE에서 노드 데이터 가져오기
             int now_Node = queue.poll();
+            // 가져온 노드 출력
             System.out.println(now_Node + " ");
+            // 현재 노드의 연결 노드 중 미방문 노드를 큐에 삽입하고 방문 배열에 기록
             for (int i : A[now_Node]) {
                 if (!visited[i]) {
                     visited[i] = true;
@@ -105,8 +115,8 @@ public class BFS_MyAnswer {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         // N(row), M(column)
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
         // A 배열 초기화하기
         A2 = new int[N][M];
         // visited 배열 초기화하기
@@ -157,8 +167,8 @@ public class BFS_MyAnswer {
     static ArrayList<Edge>[] A3;
 
     static class Edge {
-        int e;
-        int value;
+        int e; // 목적지 노드
+        int value; // 에지의 가중치
         public Edge(int e, int value) {
             this.e = e;
             this.value = value;
@@ -171,10 +181,10 @@ public class BFS_MyAnswer {
      * */
     public static void findTreeDiameter() throws IOException{
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        A3 = new ArrayList[N + 1];
+        int N = sc.nextInt();               // 노드 개수
+        A3 = new ArrayList[N + 1];          // 그래프 데이터 저장 인접 리스트
         for (int i = 1; i <= N; i++) {
-            A3[i] = new ArrayList< Edge>();
+            A3[i] = new ArrayList< Edge>(); // A 인접 리스트의 각 ArrayList 초기화
         }
 
         // A 인접 리스트에 그래프 데이터 저장하기
@@ -188,9 +198,9 @@ public class BFS_MyAnswer {
             }
         }
 
-        distance = new int[N + 1];
-        visited3 = new boolean[N + 1];
-        BFS3(1);
+        distance = new int[N + 1];            // 배열 초기화 하기
+        visited3 = new boolean[N + 1];        // 배열 초기화 하기
+        BFS3(1);                        // 임의의 점을 시작점으로 실행하기
         int Max = 1;
         // distance 배열에서 가장 큰 값으로 다시 시작점 설정
         for (int i = 2; i <= N; i++) {
