@@ -50,8 +50,45 @@ public class BinarySearch_MyAnswer {
     /*
      * [TIP] '블루레이의 크기가 모두 같고 녹화 순서가 바뀌지 않아아함' 이라는 문제 조건이 이진 탐색 알고리즘을 선택하는 실마리이다.
      * 모두 저장할 수 있다면 블루레이 크기를 줄이고, 저장할 수 없다면 블루레이 크기를 늘리는 방식으로 블루레이 크기의 최솟값을 알 수 있다.
+     * 이진 탐색의 시작 인덱스는 최대 레슨 시간, 종료 인덱스는 레슨 시간을 모두 합한 값
      * */
-    public void makeBlueLay(){
+    public void makeBlueLay_MyAnswer(){
+        Scanner sc = new Scanner(System.in);
+        int lesseonCnt = sc.nextInt();
+        int bluelayCnt = sc.nextInt();
+
+        int[] arrLesson = new int[lesseonCnt];
+
+        for (int i = 0; i < arrLesson.length; i++) {
+            arrLesson[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arrLesson);
+
+        boolean find = false;
+        while(true) {
+            if (find) break;
+
+            for (int i = 0; i < bluelayCnt; i++) {
+
+            }
+        }
+
+        for (int i = 0; i < bluelayCnt; i++) {
+            //이진 탐색 시작
+            int stIndex = arrLesson[lesseonCnt-1];
+            int edInex = Arrays.stream(arrLesson).sum();
+
+            while(stIndex <= edInex){
+                int midi = (stIndex + edInex) / 2;
+                int midV = arrLesson[midi];
+
+
+            }
+
+        }
+
+
 
     }
 }
