@@ -42,7 +42,7 @@ public class BinarySearch {
         //              0
         //              1
         System.out.println("문제 1(05-3-029) : 원하는 정수 찾기");
-        myAnswer.findInteger();
+        //myAnswer.findInteger();
 
         //문제 2(05-3-030) : 블루레이 만들기
         //입력 : 1번째 줄에 레슨의 수 N(1 <= N <= 100,000), M(1 <= M <= N)
@@ -50,7 +50,8 @@ public class BinarySearch {
         //      각 레슨의 길이는 10,000분을 넘지 않는다.
         //출력 : 1번째 줄에 블루레이 크기 중 최솟값을 출력한다.
         //[예제 입력1] : 9 3 //레슨 수, 블루레이 개수
-        //[예제 출력1] : 1 2 3 4 5 6 7 8 9
+        //              1 2 3 4 5 6 7 8 9
+        //[예제 출력1] : 17
         System.out.println("문제 2(05-3-030) : 블루레이 만들기");
         myAnswer.makeBlueLay();
     }
