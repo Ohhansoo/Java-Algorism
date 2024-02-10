@@ -62,7 +62,7 @@ public class BFS {
         //              111011
         //[예제 출력1] : 15
         System.out.println("문제 2(05-2-027) : 미로 탐색하기");
-        myAnswer.exploreMaze();
+        //myAnswer.exploreMaze();
 
         //문제 3(05-2-028) : 트리의 지름 구하기
         /************************************** 개 요 *************************************
@@ -81,7 +81,7 @@ public class BFS {
         //              5 4 6 -1
         //[예제 출력1] : 11
         System.out.println("문제 3(05-2-028) : 트리의 지름 구하기");
-        //myAnswer.findTreeDiameter();
+        myAnswer.findTreeDiameter();
 
     }
 }
