@@ -39,6 +39,6 @@ public class Greedy {
         //              50000
         //[예제 출력1] : 6
         System.out.println("문제 1(05-3-031) : 동전 개수의 최솟값 구하기");
-        myAnswer.findMinimumCoins_MyAnswer();
+        myAnswer.findMinimumCoins();
     }
 }
