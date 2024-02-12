@@ -124,4 +124,12 @@ public class BinarySearch_MyAnswer {
         }
         System.out.println(start);
     }
+
+    /*
+     * [TIP] k의 범위가 1 ~ min(10^9, N^2)이므로 시간 복잡도가 N^2인 일고리즘은 사용할 수 없다.
+     * 따라서 이진 탐색을 이용한다.
+     * */
+    public void findKthNumber() throws IOException {
+
+    }
 }
