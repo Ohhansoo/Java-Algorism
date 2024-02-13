@@ -128,8 +128,33 @@ public class BinarySearch_MyAnswer {
     /*
      * [TIP] k의 범위가 1 ~ min(10^9, N^2)이므로 시간 복잡도가 N^2인 일고리즘은 사용할 수 없다.
      * 따라서 이진 탐색을 이용한다.
+     * 중앙값보다 작거나 같은 수의 개수는 Math.min(middle / i,N)으로 계산합니다.
      * */
     public void findKthNumber() throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+        long start = 1;
+        long end = K;
+        long ans = 0;
 
+        //이진 탐색 수행하기
+        while (start <= end) {
+            long middle = (start + end) / 2;
+            long cnt = 0;
+            // 중앙값보다 작은 수는 몇 개인지 계산하기
+            for (int i = 1; i <= N; i++) {
+                //작은 수를 카운트하는 핵심 로직
+                cnt += Math.min(middle / i, N);
+            }
+            if (cnt < K) {
+                start = middle + 1;
+            }
+            else {
+                ans = middle;
+                end = middle - 1;
+            }
+        }
+        System.out.println(ans);
     }
 }
