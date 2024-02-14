@@ -56,4 +56,37 @@ public class Greedy_MyAnswer {
         }
         System.out.println(count);
     }
+
+    public void sortCard_MyAnswer() {
+        Scanner sc = new Scanner(System.in);
+        int cntCard = sc.nextInt();
+
+        Integer[] arrTempCard = new Integer[cntCard];
+
+        for (int i = 0; i < cntCard; i++) {
+            arrTempCard[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arrTempCard);
+
+        int[] arrCard = Arrays.stream(arrTempCard).mapToInt(i -> i).toArray();
+        int[] arrSum;
+
+        if (cntCard > 1) {
+            arrSum = new int[cntCard-1];
+            arrSum[0] = arrCard[0] + arrCard[1];
+
+            for (int i = 1; i < cntCard-1; i++) {
+                arrSum[i] = arrSum[i-1] + arrCard[i+1];
+            }
+        }
+        else {
+            arrSum = new int [] {arrCard[0]};
+        }
+        System.out.println(Arrays.stream(arrSum).sum());
+    }
+
+    public void sortCard() {
+
+    }
 }
