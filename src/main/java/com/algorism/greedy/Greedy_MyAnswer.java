@@ -63,15 +63,14 @@ public class Greedy_MyAnswer {
         Scanner sc = new Scanner(System.in);
         int cntCard = sc.nextInt();
 
-        Integer[] arrTempCard = new Integer[cntCard];
+        int[] arrCard = new int[cntCard];
 
         for (int i = 0; i < cntCard; i++) {
-            arrTempCard[i] = sc.nextInt();
+            arrCard[i] = sc.nextInt();
         }
 
-        Arrays.sort(arrTempCard);
+        Arrays.sort(arrCard);
 
-        int[] arrCard = Arrays.stream(arrTempCard).mapToInt(i -> i).toArray();
         int[] arrSum;
 
         if (cntCard > 1) {
@@ -87,7 +86,6 @@ public class Greedy_MyAnswer {
         }
         System.out.println(Arrays.stream(arrSum).sum());
     }
-
     public void sortCard() {
 
     }

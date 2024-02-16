@@ -157,4 +157,13 @@ public class BinarySearch_MyAnswer {
         }
         System.out.println(ans);
     }
+
+    /*
+     * [TIP] k의 범위가 1 ~ min(10^9, n^2)이므로 시간 복잡도가 N^2인 알고리즘은 사용할 수 없다.
+     * 이진 탐색으로 중앙값보다 작은 수의 개수를 세면서 범위를 절반씩 줄이는 방법으로 B[k] 값을 구한다.
+     * 작은 수의 개수가 k-1개인 중앙값이 정답이다.
+     * */
+    public static void kthNumber(){
+
+    }
 }
