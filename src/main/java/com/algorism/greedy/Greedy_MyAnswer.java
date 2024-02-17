@@ -2,10 +2,7 @@ package com.algorism.greedy;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Greedy_MyAnswer {
 
@@ -137,5 +134,52 @@ public class Greedy_MyAnswer {
         sum = sum + one;
         System.out.println(sum);
 
+    }
+
+    public void assignMeetingRoom() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        int cntMeeting = sc.nextInt();
+        int[] start = new int[cntMeeting];
+        HashMap<Integer, Integer> hmTime = new HashMap<>();
+
+        for (int i = 0; i < cntMeeting; i++) {
+            start[i] = sc.nextInt();
+            int end = sc.nextInt();
+        }
+
+        int maxMeeting = 0;
+
+        //start
+    }
+
+    public void assignMeetingRoom_Answer() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[][] A = new int[N][2];
+        for (int i = 0; i < N; i++) {
+            A[i][0] = sc.nextInt();
+            A[i][1] = sc.nextInt();
+        }
+        Arrays.sort(A, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] S, int[] E) {
+                if (S[1] == E[1]) {
+                    // 종료 시간이 같을 때
+                    return S[0] - E[0];
+                }
+                return S[1] - E[1];
+            }
+        });
+        int count = 0;
+        int end = -1;
+        for (int i = 0; i < N; i++) {
+            //겹치지 않는 다음 회의가 나온 경우
+            if (A[i][0] >= end) {
+                //종료 시간 업데이트 하기
+                end = A[i][1];
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 }
