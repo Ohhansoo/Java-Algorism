@@ -182,4 +182,24 @@ public class Greedy_MyAnswer {
         }
         System.out.println(count);
     }
+
+    public void findParenthesis() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        String expression = sc.next();
+
+        String minus[] = expression.split("-");
+        int StartNum = Integer.parseInt(minus[0]);
+
+        for(int i = 1; i <= minus.length; i++) {
+            String plusNum = minus[i];
+            String[] plus = plusNum.split("\\+");
+            int plusSum = 0;
+
+            for (int j = 0; j < plus.length; j++) {
+                plusSum += Integer.parseInt(plus[j]);
+            }
+            StartNum -= plusSum;
+        }
+        System.out.println(StartNum);
+    }
 }
