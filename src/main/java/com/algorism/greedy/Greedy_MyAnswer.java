@@ -183,14 +183,14 @@ public class Greedy_MyAnswer {
         System.out.println(count);
     }
 
-    public void findParenthesis() throws IOException{
+    public void findParenthesis_MyAnswer() throws IOException{
         Scanner sc = new Scanner(System.in);
         String expression = sc.next();
 
         String minus[] = expression.split("-");
         int StartNum = Integer.parseInt(minus[0]);
 
-        for(int i = 1; i <= minus.length; i++) {
+        for(int i = 1; i < minus.length; i++) {
             String plusNum = minus[i];
             String[] plus = plusNum.split("\\+");
             int plusSum = 0;
@@ -201,5 +201,36 @@ public class Greedy_MyAnswer {
             StartNum -= plusSum;
         }
         System.out.println(StartNum);
+    }
+
+    static int answer = 0;
+
+
+    public void findParenthesis() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        String example = sc.next();
+
+        String str[] = example.split("-");
+
+        for(int i = 1; i < str.length; i++) {
+            int temp = mySum(str[i]);
+            // 가장 앞에 있는 값만 더함
+            if (i == 0)
+                answer = answer + temp;
+            // 뒷부분은 더한 값들을 뺌
+            else
+                answer = answer - temp;
+        }
+        System.out.println(answer);
+    }
+
+    // 나뉜 그룹의 더하기 연산 수행 함수
+    static int mySum(String a) {
+        int sum = 0;
+        String temp[] = a.split("[+]");
+        for (int i = 0; i < temp.length; i++) {
+            sum += Integer.parseInt(temp[i]);
+        }
+        return sum;
     }
 }
