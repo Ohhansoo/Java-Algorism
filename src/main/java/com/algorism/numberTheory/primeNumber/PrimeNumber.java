@@ -21,5 +21,20 @@ public class PrimeNumber {
     public static void main(String[] args) throws IOException {
         PrimeNumber_MyAnswer myAnswer = new PrimeNumber_MyAnswer();
 
+        //문제 1(07-1-037) : 소수구하기
+        /************************************** 개 요 *************************************
+         * M 이상 N이하의 소수를 모두 출력하는 프로그램을 작성하시오
+         * */
+        //입력 : 1번째 줄에 자연수 M과 N이 빈칸을 사이에 두고 주어진다(1 <= M <= N <= 1,000,000)
+        //      M 이상 N이하의 소수가 1개 이상 있는 입력만 주어진다.
+        //출력 : 1줄에 1개씩, 증가하는 순서대로 소수를 출력한다.
+        //[예제 입력1] : 3 16
+        //[예제 출력1] : 3
+        //              5
+        //              7
+        //              11
+        //              13
+        System.out.println("문제 1(07-1-037) : 소수구하기");
+        myAnswer.findPrimeNumber();
     }
 }
