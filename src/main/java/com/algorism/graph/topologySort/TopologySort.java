@@ -60,7 +60,7 @@ public class TopologySort {
         //              18
         //              17
         System.out.println("문제 2(08-3-054) : 게임 개발하기");
-        myAnswer.lineUp();
+        myAnswer.developGame();
 
         //문제 3(08-3-055) : 임계 경로 구하기
         /************************************** 개 요 *************************************
