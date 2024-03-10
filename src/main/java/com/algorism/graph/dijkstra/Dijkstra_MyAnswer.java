@@ -69,6 +69,10 @@ public class Dijkstra_MyAnswer {
             }
         }
     }
+
+    public void findMinimumCost() throws IOException{
+
+    }
 }
 
 class Edge implements Comparable<Edge> {
