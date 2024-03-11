@@ -71,7 +71,9 @@ public class Dijkstra_MyAnswer {
     }
 
     public void findMinimumCost() throws IOException{
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        st = new StringTokenizer(br.readLine());
     }
 }
 

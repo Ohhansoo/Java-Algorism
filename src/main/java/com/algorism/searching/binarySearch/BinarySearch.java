@@ -65,7 +65,7 @@ public class BinarySearch {
         //      2번째 줄에 k가 주어진다. K는 min(10^9, N^2)보다 작거나 같은 자연수다이다.
         //출력 : B[k]를 출력한다
         //[예제 입력1] : 3
-        //              7
+        //             7
         //[예제 출력1] : 6
         System.out.println("문제 3(05-3-031) : 배열에서 K번째 수 찾기");
         myAnswer.findKthNumber();
