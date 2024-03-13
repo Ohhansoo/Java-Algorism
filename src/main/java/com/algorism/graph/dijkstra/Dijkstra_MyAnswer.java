@@ -173,11 +173,31 @@ public class Dijkstra_MyAnswer {
                 if(W[u.node][adjNode] != 0) {
                     // 저장된 경로가 K개가 안 될 떄는 그냥 추가하기
                     if (distQueue[adjNode].size() < K) {
-                        distQueue[adjNode].add(u.cost);
+                        distQueue[adjNode].add(u.cost + W[u.node][adjNode]);
+                        pq.add(new Node2(adjNode, u.cost + W[u.node][adjNode]));
+                    }
+                    // 저장된 경로가 K개이고, 현재 가장 큰 값보다 작을 때만 추가하기
+                    else if (distQueue[adjNode].peek() > u.cost + W[u.node][adjNode]) {
+                        //기존 큐에서 Max값 먼저 삭제해야 함
+                        distQueue[adjNode].poll();
+                        distQueue[adjNode].add(u.cost + W[u.node][adjNode]);
+                        pq.add(new Node2(adjNode, u.cost + W[u.node][adjNode]));
                     }
                 }
             }
         }
+        //K번째 경로 출력하기
+        for (int i = 1; i <=N; i++) {
+            if (distQueue[i].size() == K) {
+                bw.write(distQueue[i].peek() + "\n");
+            }
+            else {
+                bw.write(-1 + "\n");
+            }
+        }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
 
@@ -208,7 +228,7 @@ class Node implements Comparable<Node> {
     }
 
 }
-class Node2 implements Comparable<Node> {
+class Node2 implements Comparable<Node2> {
     int node;
     int cost;
 
@@ -217,9 +237,7 @@ class Node2 implements Comparable<Node> {
         this.cost = cost;
     }
     @Override
-    public int compareTo(Node o) {
-        //Node2로 받아야하는데 방법이 없을까..
-        // return this.cost < o.cost ? -1 : 1;
-        return 1;
+    public int compareTo(Node2 o) {
+        return this.cost < o.cost ? -1 : 1;
     }
 }
