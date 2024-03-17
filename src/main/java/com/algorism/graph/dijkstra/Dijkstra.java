@@ -80,7 +80,7 @@ public class Dijkstra {
         //              1 5
         //[예제 출력1] : 4
         System.out.println("문제 2(08-4-057) : 최소 비용 구하기");
-        myAnswer.findMinimumCost();
+        //myAnswer.findMinimumCost();
 
         //문제 3(08-4-058) : K번째 최단 경로 찾기
         /************************************** 개 요 *************************************
