@@ -69,7 +69,6 @@ public class BellmanFordMoore_MyAnswer {
         edges = new Edge[M + 1];
         distance = new long[N + 1];
         Arrays.fill(distance, Integer.MAX_VALUE);
-
     }
 }
 
