@@ -1,6 +1,7 @@
 package com.algorism.graph.floydWarshall;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class FloydWarshall_MyAnswer {
@@ -54,5 +55,12 @@ public class FloydWarshall_MyAnswer {
 
     public void findFRoute () throws IOException {
 
+        int[] arr = {1,2,3,4,5};
+        int a = 1;
+        char c = 'e';
+        String b = a + "";
+        b.charAt(0);
+        Arrays.stream(arr).average().orElse(0);
+        System.out.println(b);
     }
 }

@@ -55,7 +55,7 @@ public class FloydWarshall {
         //             10 7 13 0 3
         //             7 4 10 6 0
         System.out.println("문제 1(08-6-061) : 가장 빠른 버스 노선 구하기");
-        myAnswer.findFastestBusRoute();
+        //myAnswer.findFastestBusRoute();
 
         //문제 2(08-6-062) : 경로 찾기
         //[예제 입력1] : 3 // 인접 행렬의 크기
@@ -65,7 +65,7 @@ public class FloydWarshall {
         //[예제 출력1] : 1 1 1
         //              1 1 1
         //              1 1 1
-        System.out.println("문제 1(08-6-061) : 가장 빠른 버스 노선 구하기");
+        System.out.println("문제 2(08-6-062) : 경로 찾기");
         myAnswer.findFRoute();
     }
 }
