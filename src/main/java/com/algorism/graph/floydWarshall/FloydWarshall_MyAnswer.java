@@ -1,7 +1,11 @@
 package com.algorism.graph.floydWarshall;
 
+import org.springframework.util.comparator.Comparators;
+
 import java.io.*;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class FloydWarshall_MyAnswer {
@@ -55,8 +59,16 @@ public class FloydWarshall_MyAnswer {
 
     public void findFRoute () throws IOException {
 
-        int[] arr = {1,2,3,4,5};
-        int a = 1;
+        int[] arr = {1,4,3,2,5};
+        int[] min = Arrays.stream(arr).filter(i -> i % 2 == 0).sorted().toArray();
+        for (int n : min) System.out.println(n);
+        String[] strArr = {"a", "b", "c"};
+        int num = Arrays.asList(strArr).indexOf("a");
+
+        String str = "01023451234";
+
+        String a = str.substring(str.length() - 4, str.length());
+        System.out.println(a);
         char c = 'e';
         String b = a + "";
         b.charAt(0);
