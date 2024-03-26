@@ -20,4 +20,46 @@ public class run {
 
         return players;
     }
+
+    /*
+    * 붕대감기 틀린문제
+    * */
+    public int solution2(int[] bandage, int health, int[][] attacks){
+        int answer = 0;
+        int current_health = health;
+        int last_time = attacks[attacks.length-1][0];
+        int attack_count = 0;
+        int series_heal_count = 0;
+
+        for (int i = 1; i < last_time + 1; i++) {
+            //몬스터 공격 확인
+            if (attacks[attack_count][0] == i) {
+                series_heal_count = 0;
+                current_health -= attacks[attack_count][1];
+                attack_count++;
+                if (current_health <= 0) return -1;
+            }
+            //체력 회복
+            else {
+                series_heal_count += 1;
+
+                if (current_health < health) {
+                    current_health += bandage[1];
+                }
+
+                if (series_heal_count >= bandage[0]) {
+                    current_health += bandage[2];
+                }
+
+                if (current_health > health) {
+                    current_health = health;
+                }
+            }
+        }
+
+        answer = current_health;
+
+        return answer;
+    }
+
 }
