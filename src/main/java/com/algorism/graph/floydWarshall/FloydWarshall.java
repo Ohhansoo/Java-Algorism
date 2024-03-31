@@ -67,5 +67,16 @@ public class FloydWarshall {
         //              1 1 1
         System.out.println("문제 2(08-6-062) : 경로 찾기");
         myAnswer.findFRoute();
+
+        //문제 3(08-6-063) : 케빈 베이컨의 6단계 법칙
+        //[예제 입력1] : 5 5 //유저의 수, 친구 관계의 수
+        //             1 3
+        //             1 4
+        //             4 5
+        //             4 3
+        //             3 2
+        //[예제 출력1] : 3
+        System.out.println("문제 3(08-6-063) : 케빈 베이컨의 6단계 법칙");
+        myAnswer.SixDegreesOfKevinBacon();
     }
 }
