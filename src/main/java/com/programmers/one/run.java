@@ -39,6 +39,7 @@ public class run {
                 attack_count++;
                 if (current_health <= 0) return -1;
             }
+
             //체력 회복
             else {
                 series_heal_count += 1;
@@ -62,4 +63,8 @@ public class run {
         return answer;
     }
 
+    public void test(){
+        String[] arrNum = {"1 3 5"};
+        Arrays.stream(arrNum).mapToInt(x -> Integer.parseInt(x)).max();
+    }
 }
